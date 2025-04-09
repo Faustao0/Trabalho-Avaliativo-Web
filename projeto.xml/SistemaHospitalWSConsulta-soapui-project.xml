@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="de9ade74-c0dc-4dd0-9f70-f2fb255a553f" activeEnvironment="Default" name="SistemaHospitalWSConsulta" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f9edbe88-724a-43d9-b06e-87e32f446d5f" wsaVersion="NONE" name="ConsultaWSImpServiceSoapBinding" type="wsdl" bindingName="{http://sistemahospitalws.unipar.br/}ConsultaWSImpServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp?wsdl"><con:part><con:url>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ConsultaWSImpService" targetNamespace="http://sistemahospitalws.unipar.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://sistemahospitalws.unipar.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://interfaces.sistemahospitalws.unipar.br/">
+  <wsdl:import location="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp?wsdl=ConsultaWS.wsdl" namespace="http://interfaces.sistemahospitalws.unipar.br/"></wsdl:import>
+  <wsdl:binding name="ConsultaWSImpServiceSoapBinding" type="ns1:ConsultaWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="agendar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="agendar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="agendarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancelar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaWSImpService">
+    <wsdl:port binding="tns:ConsultaWSImpServiceSoapBinding" name="ConsultaWSImpPort">
+      <soap:address location="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp?wsdl=ConsultaWS.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ConsultaWS" targetNamespace="http://interfaces.sistemahospitalws.unipar.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://interfaces.sistemahospitalws.unipar.br/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://interfaces.sistemahospitalws.unipar.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces.sistemahospitalws.unipar.br/">
+      <xs:element name="agendar" type="tns:agendar"/>
+      <xs:element name="agendarResponse" type="tns:agendarResponse"/>
+      <xs:element name="cancelar" type="tns:cancelar"/>
+      <xs:element name="cancelarResponse" type="tns:cancelarResponse"/>
+      <xs:complexType name="agendar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:consultaInsertRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultaInsertRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dataHora" type="xs:string"/>
+          <xs:element minOccurs="0" name="medicoId" type="xs:int"/>
+          <xs:element minOccurs="0" name="pacienteId" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agendarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:consulta"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consulta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelada" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="daraHora" type="tns:localDateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="medico" type="tns:medico"/>
+          <xs:element minOccurs="0" name="motivoCancelamento" type="tns:motivoCancelamento"/>
+          <xs:element minOccurs="0" name="paciente" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType final="extension restriction" name="localDateTime">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="medico">
+        <xs:complexContent>
+          <xs:extension base="tns:pessoa">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ativo" type="xs:boolean"/>
+              <xs:element minOccurs="0" name="crm" type="xs:long"/>
+              <xs:element minOccurs="0" name="especialidade" type="tns:especialidade"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="pessoa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="endereco">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:long"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="uf" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="paciente">
+        <xs:complexContent>
+          <xs:extension base="tns:pessoa">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ativo" type="xs:boolean"/>
+              <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="cancelar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:consultaCancelamentoRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultaCancelamentoRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="motivoCancelamento" type="tns:motivoCancelamento"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:simpleType name="especialidade">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ORTOPEDIA"/>
+          <xs:enumeration value="CARDIOLOGIA"/>
+          <xs:enumeration value="GINECOLOGIA"/>
+          <xs:enumeration value="DERMATOLOGIA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="motivoCancelamento">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PACIENTE_DESISTIU"/>
+          <xs:enumeration value="MEDICO_CANCELOU"/>
+          <xs:enumeration value="OUTROS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="SQLException" type="tns:SQLException"/>
+      <xs:complexType name="SQLException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BusinessException" type="tns:BusinessException"/>
+      <xs:complexType name="BusinessException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NamingException" type="tns:NamingException"/>
+      <xs:complexType name="NamingException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="resolvedObj" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="agendar">
+    <wsdl:part element="ns1:agendar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="ns1:SQLException" name="SQLException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BusinessException">
+    <wsdl:part element="ns1:BusinessException" name="BusinessException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelar">
+    <wsdl:part element="ns1:cancelar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agendarResponse">
+    <wsdl:part element="ns1:agendarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NamingException">
+    <wsdl:part element="ns1:NamingException" name="NamingException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelarResponse">
+    <wsdl:part element="ns1:cancelarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaWS">
+    <wsdl:operation name="agendar">
+      <wsdl:input message="ns1:agendar" name="agendar"></wsdl:input>
+      <wsdl:output message="ns1:agendarResponse" name="agendarResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelar">
+      <wsdl:input message="ns1:cancelar" name="cancelar"></wsdl:input>
+      <wsdl:output message="ns1:cancelarResponse" name="cancelarResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp</con:endpoint></con:endpoints><con:operation id="5deddbbf-9472-42f8-ab5a-eb679c249379" isOneWay="false" action="" name="agendar" bindingOperationName="agendar" type="Request-Response" outputName="agendarResponse" inputName="agendar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fc10a0f0-3687-4fad-a907-5a786c3db770" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.sistemahospitalws.unipar.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:agendar>
+         <arg0>
+            <dataHora>2025-09-18 11:00</dataHora>
+            <medicoId></medicoId>
+            <pacienteId>2</pacienteId>
+         </arg0>
+      </int:agendar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sistemahospitalws.unipar.br/ConsultaWS/agendar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="af43399a-7718-4bfc-8b96-0bad4ceaf7a7" isOneWay="false" action="" name="cancelar" bindingOperationName="cancelar" type="Request-Response" outputName="cancelarResponse" inputName="cancelar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ca8efed-5ee1-45c8-acfa-b3f5d1c1f1d8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/ConsultaWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.sistemahospitalws.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:cancelar>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <id>7</id>\r
+            <!--Optional:-->\r
+            <motivoCancelamento>PACIENTE_DESISTIU</motivoCancelamento>\r
+         </arg0>\r
+      </int:cancelar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sistemahospitalws.unipar.br/ConsultaWS/cancelar"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

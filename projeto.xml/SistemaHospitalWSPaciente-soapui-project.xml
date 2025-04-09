@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="759ca012-66a9-4cf9-a00d-9c48cf9e82c9" activeEnvironment="Default" name="SistemaHospitalWSPaciente" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3e1cc551-b0cf-4796-a013-cb5b62e83a94" wsaVersion="NONE" name="PacienteWSImpServiceSoapBinding" type="wsdl" bindingName="{http://sistemahospitalws.unipar.br/}PacienteWSImpServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp?wsdl"><con:part><con:url>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PacienteWSImpService" targetNamespace="http://sistemahospitalws.unipar.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://sistemahospitalws.unipar.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://interfaces.sistemahospitalws.unipar.br/">
+  <wsdl:import location="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp?wsdl=PacienteWS.wsdl" namespace="http://interfaces.sistemahospitalws.unipar.br/"></wsdl:import>
+  <wsdl:binding name="PacienteWSImpServiceSoapBinding" type="ns1:PacienteWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="editar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="editarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="excluir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="excluir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="excluirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inserir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inserir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inserirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PacienteWSImpService">
+    <wsdl:port binding="tns:PacienteWSImpServiceSoapBinding" name="PacienteWSImpPort">
+      <soap:address location="http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp?wsdl=PacienteWS.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PacienteWS" targetNamespace="http://interfaces.sistemahospitalws.unipar.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://interfaces.sistemahospitalws.unipar.br/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://interfaces.sistemahospitalws.unipar.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces.sistemahospitalws.unipar.br/">
+      <xs:element name="editar" type="tns:editar"/>
+      <xs:element name="editarResponse" type="tns:editarResponse"/>
+      <xs:element name="excluir" type="tns:excluir"/>
+      <xs:element name="excluirResponse" type="tns:excluirResponse"/>
+      <xs:element name="inserir" type="tns:inserir"/>
+      <xs:element name="inserirResponse" type="tns:inserirResponse"/>
+      <xs:element name="listar" type="tns:listar"/>
+      <xs:element name="listarResponse" type="tns:listarResponse"/>
+      <xs:complexType name="listar">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listarResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="paciente">
+        <xs:complexContent>
+          <xs:extension base="tns:pessoa">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="pessoa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="endereco">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:long"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:long"/>
+          <xs:element minOccurs="0" name="uf" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:pacienteUpdateRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pacienteUpdateRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:pacienteUpdateRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="excluir">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="excluirResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="inserir">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:pacienteInsertRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pacienteInsertRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inserirResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SQLException" type="tns:SQLException"/>
+      <xs:complexType name="SQLException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NamingException" type="tns:NamingException"/>
+      <xs:complexType name="NamingException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="resolvedObj" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BusinessException" type="tns:BusinessException"/>
+      <xs:complexType name="BusinessException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listar">
+    <wsdl:part element="ns1:listar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editar">
+    <wsdl:part element="ns1:editar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editarResponse">
+    <wsdl:part element="ns1:editarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluirResponse">
+    <wsdl:part element="ns1:excluirResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="ns1:SQLException" name="SQLException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BusinessException">
+    <wsdl:part element="ns1:BusinessException" name="BusinessException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluir">
+    <wsdl:part element="ns1:excluir" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserir">
+    <wsdl:part element="ns1:inserir" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NamingException">
+    <wsdl:part element="ns1:NamingException" name="NamingException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserirResponse">
+    <wsdl:part element="ns1:inserirResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarResponse">
+    <wsdl:part element="ns1:listarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PacienteWS">
+    <wsdl:operation name="listar">
+      <wsdl:input message="ns1:listar" name="listar"></wsdl:input>
+      <wsdl:output message="ns1:listarResponse" name="listarResponse"></wsdl:output>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <wsdl:input message="ns1:editar" name="editar"></wsdl:input>
+      <wsdl:output message="ns1:editarResponse" name="editarResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="excluir">
+      <wsdl:input message="ns1:excluir" name="excluir"></wsdl:input>
+      <wsdl:output message="ns1:excluirResponse" name="excluirResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inserir">
+      <wsdl:input message="ns1:inserir" name="inserir"></wsdl:input>
+      <wsdl:output message="ns1:inserirResponse" name="inserirResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp</con:endpoint></con:endpoints><con:operation id="31d0c71d-7eba-443a-9761-deb32607e251" isOneWay="false" action="" name="editar" bindingOperationName="editar" type="Request-Response" outputName="editarResponse" inputName="editar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c1c3ef36-a79d-4964-ba57-75cfa49b61e5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.sistemahospitalws.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:editar>\r
+         <arg0>\r
+            <endereco>\r
+               <bairro>Jardim Gisela</bairro>\r
+               <cep>123456789</cep>\r
+               <cidade>Toledo</cidade>\r
+               <complemento>Perto da praça</complemento>\r
+               <logradouro>Casa</logradouro>\r
+               <numero>78</numero>\r
+               <uf>PR</uf>\r
+            </endereco>\r
+            <id>6</id>\r
+            <nome>Bruno Manoel Toebe</nome>\r
+            <telefone>45 99985-3211</telefone>\r
+         </arg0>\r
+      </int:editar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sistemahospitalws.unipar.br/PacienteWS/editar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3a34b71e-ea21-4549-ae7b-8717b2553b1d" isOneWay="false" action="" name="excluir" bindingOperationName="excluir" type="Request-Response" outputName="excluirResponse" inputName="excluir" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e85f781c-0160-40ba-8d69-19fbf709da6c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.sistemahospitalws.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:excluir>\r
+         <!--Optional:-->\r
+         <arg0>4</arg0>\r
+      </int:excluir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sistemahospitalws.unipar.br/PacienteWS/excluir"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="43164b22-2ccf-4d57-93a5-4341ba6b85c4" isOneWay="false" action="" name="inserir" bindingOperationName="inserir" type="Request-Response" outputName="inserirResponse" inputName="inserir" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="646b987e-066a-4006-8221-426d22c403fe" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.sistemahospitalws.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:inserir>\r
+         <arg0>\r
+            <cpf>33377788812</cpf>\r
+            <email>junior@gmail.com</email>\r
+            <endereco>\r
+               <bairro>Jardim Botanico</bairro>\r
+               <cep>12345678</cep>\r
+               <cidade>Curitiba</cidade>\r
+               <complemento></complemento>\r
+               <logradouro>Casa</logradouro>\r
+               <numero>12</numero>\r
+               <uf>PR</uf>\r
+            </endereco>\r
+            <nome>Junior</nome>\r
+            <telefone>47 22355-9090</telefone>\r
+         </arg0>\r
+      </int:inserir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sistemahospitalws.unipar.br/PacienteWS/inserir"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3641141c-2ca4-4730-9da2-d08ca945ab59" isOneWay="false" action="" name="listar" bindingOperationName="listar" type="Request-Response" outputName="listarResponse" inputName="listar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b0408a34-5ad3-4946-b107-f232b2c530c6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SistemaHospitalWS-1.0-SNAPSHOT/PacienteWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.sistemahospitalws.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:listar/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sistemahospitalws.unipar.br/PacienteWS/listar"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
