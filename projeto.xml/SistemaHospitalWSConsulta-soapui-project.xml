@@ -219,7 +219,7 @@
    <soapenv:Body>
       <int:agendar>
          <arg0>
-            <dataHora>2025-09-18 11:00</dataHora>
+            <dataHora>2025-06-18 14:00</dataHora>
             <medicoId></medicoId>
             <pacienteId>2</pacienteId>
          </arg0>
@@ -229,12 +229,9 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <int:cancelar>\r
-         <!--Optional:-->\r
          <arg0>\r
-            <!--Optional:-->\r
-            <id>7</id>\r
-            <!--Optional:-->\r
-            <motivoCancelamento>PACIENTE_DESISTIU</motivoCancelamento>\r
+            <id>8</id>\r
+            <motivoCancelamento>MEDICO_CANCELOU</motivoCancelamento>\r
          </arg0>\r
       </int:cancelar>\r
    </soapenv:Body>\r

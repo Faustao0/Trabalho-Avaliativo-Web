@@ -77,7 +77,7 @@ public class ConsultaService {
             throw new BusinessException("Consulta não encontrada.");
         }
 
-        LocalDateTime dataHoraConsulta = consulta.getDaraHora();
+        LocalDateTime dataHoraConsulta = consulta.getDataHora();
         Duration duracao = Duration.between(LocalDateTime.now(), dataHoraConsulta);
         if (duracao.toHours() < 24) {
             throw new BusinessException("Cancelamento deve ser feito com no mínimo 24 horas de antecedência.");

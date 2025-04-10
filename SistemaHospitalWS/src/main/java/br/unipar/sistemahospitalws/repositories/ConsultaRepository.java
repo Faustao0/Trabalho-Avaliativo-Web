@@ -51,7 +51,7 @@ public class ConsultaRepository {
             consulta.setId(consultaId);
             consulta.setPaciente(null);
             consulta.setMedico(null);
-            consulta.setDaraHora(dto.getDataHoraAsLocalDateTime());
+            consulta.setDataHora(dto.getDataHoraAsLocalDateTime());
             consulta.setCancelada(false);
 
             return consulta;
@@ -96,7 +96,7 @@ public class ConsultaRepository {
             if (rs.next()) {
                 Consulta consulta = new Consulta();
                 consulta.setId(rs.getInt("id"));
-                consulta.setDaraHora(rs.getTimestamp("data_hora").toLocalDateTime());
+                consulta.setDataHora(rs.getTimestamp("data_hora").toLocalDateTime());
                 consulta.setCancelada(rs.getBoolean("cancelada"));
                 String motivoStr = rs.getString("motivo_cancelamento");
                 if (motivoStr != null) {

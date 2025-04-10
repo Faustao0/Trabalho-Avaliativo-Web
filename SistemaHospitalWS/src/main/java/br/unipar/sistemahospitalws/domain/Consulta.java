@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class Consulta {
 
     private Integer id;
-    private LocalDateTime  daraHora;
+    private LocalDateTime dataHora;
     private Boolean cancelada;
     private Paciente paciente;
     private Medico medico;
@@ -21,12 +21,12 @@ public class Consulta {
         this.id = id;
     }
 
-    public LocalDateTime getDaraHora() {
-        return daraHora;
+    public LocalDateTime getDataHora() {
+        return dataHora;
     }
 
-    public void setDaraHora(LocalDateTime daraHora) {
-        this.daraHora = daraHora;
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 
     public Boolean getCancelada() {
